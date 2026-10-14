@@ -1,3 +1,8 @@
+> **Sanmarcsoft hardened fork.** The custom cards this dashboard needs are pinned, patched and verified by
+> `tools/harden.ts` against `vendor/lock.json`, with a runtime egress guard and an optional phone-only
+> router. Third-party calls in the YAML (Windy, MetService links, jsDelivr, OSM email) are removed.
+> Read [SECURITY.md](SECURITY.md) before installing.
+
 # Flux-UI-Home-Assistant-Dashboard
 
 A modular, reactive Home Assistant dashboard system built on a shared architecture for both Mobile and Tablet interfaces.

@@ -1,0 +1,387 @@
+{
+  "schema": 1,
+  "patches": {
+    "bubble-no-module-store": {
+      "id": "bubble-no-module-store",
+      "find": "fetch(`https://api.github.com/repos/Clooos/Bubble-Card/discussions",
+      "replace": "((..._a)=>Promise.reject(new Error(\"Bubble Card module store disabled by Sanmarcsoft hardening\")))(`https://api.github.com/repos/Clooos/Bubble-Card/discussions",
+      "count": 1
+    },
+    "bubble-no-google-translate": {
+      "id": "bubble-no-google-translate",
+      "find": "fetch(`https://translate.googleapis.com/translate_a/single?${n}`)",
+      "replace": "Promise.reject(new Error(\"Google Translate disabled by Sanmarcsoft hardening\"))",
+      "count": 1
+    },
+    "bubble-local-translations": {
+      "id": "bubble-local-translations",
+      "find": "e.push(\"/hacsfiles/Bubble-Card/\")",
+      "replace": "e.push(\"/local/vendor/bubble-card/\")",
+      "count": 1
+    },
+    "bubble-no-remote-gif": {
+      "id": "bubble-no-remote-gif",
+      "find": " src=\"https://raw.githubusercontent.com/Clooos/Bubble-Card/main/.github/bubble-card.gif\"",
+      "replace": " alt=\"Bubble Card\"",
+      "count": 1
+    },
+    "bubble-no-badge-images": {
+      "id": "bubble-no-badge-images",
+      "find": "<img src=\"https://img.shields.io/",
+      "replace": "<img data-blocked-src=\"https://img.shields.io/",
+      "count": 3
+    },
+    "bubble-no-avatar-image": {
+      "id": "bubble-no-avatar-image",
+      "find": "<img src=\"https://avatars.githubusercontent.com/",
+      "replace": "<img data-blocked-src=\"https://avatars.githubusercontent.com/",
+      "count": 1
+    },
+    "ccf-no-eval-action": {
+      "id": "ccf-no-eval-action",
+      "find": "eval(action){eval(action.eval??\"\")}",
+      "replace": "eval(action){console.warn(\"custom-card-features: eval action disabled by Sanmarcsoft hardening\")}",
+      "count": 1
+    },
+    "same-origin-fetch-prelude": {
+      "id": "same-origin-fetch-prelude",
+      "prepend": "var __smsSameOriginFetch=(u,o)=>{const x=new URL(String(u instanceof Request?u.url:u),location.href);return x.origin===location.origin?fetch(u,o):Promise.reject(new Error(\"cross-origin fetch blocked by Sanmarcsoft hardening: \"+x.origin))};\n"
+    },
+    "streamline-same-origin": {
+      "id": "streamline-same-origin",
+      "find": "await fetch(",
+      "replace": "await __smsSameOriginFetch(",
+      "count": 3
+    },
+    "myu-same-origin": {
+      "id": "myu-same-origin",
+      "find": "r=await fetch(i,{mode:\"cors\"})",
+      "replace": "r=await __smsSameOriginFetch(i,{mode:\"cors\"})",
+      "count": 1
+    },
+    "fgm-local-backgrounds": {
+      "id": "fgm-local-backgrounds",
+      "find": "https://cdn.jsdelivr.net/gh/wessamlauf/homeassistant-frosted-glass-themes@refs/heads/main/themes/",
+      "replace": "/local/vendor/frosted-glass/",
+      "count": 2
+    }
+  },
+  "entries": [
+    {
+      "name": "bubble-card",
+      "repo": "Clooos/Bubble-Card",
+      "ref": "v3.4.1",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/Clooos/Bubble-Card/v3.4.1/dist/bubble-card.js",
+          "out": "bubble-card/bubble-card.js",
+          "sha256": "b96ef3c279a574c1cbd66b23c7efd6bfb0c4817bf094c1c37f4426e403080cfb",
+          "patches": [
+            "bubble-no-module-store",
+            "bubble-no-google-translate",
+            "bubble-local-translations",
+            "bubble-no-remote-gif",
+            "bubble-no-badge-images",
+            "bubble-no-avatar-image"
+          ],
+          "patched_sha256": "0ca7c0086d4793ebfc89725724aeacf7c79eb775177bec7c71e90d1cb52d4210"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/Clooos/Bubble-Card/v3.4.1/dist/bubble-card-en-GB.json",
+          "out": "bubble-card/bubble-card-en-GB.json",
+          "sha256": "1d048637bfcf3a7460d214d59eef34a0e93926efb71074194602ea5d945978db",
+          "patches": [],
+          "patched_sha256": "1d048637bfcf3a7460d214d59eef34a0e93926efb71074194602ea5d945978db"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/Clooos/Bubble-Card/v3.4.1/dist/bubble-card-de.json",
+          "out": "bubble-card/bubble-card-de.json",
+          "sha256": "db780c523c840187a647b78dd67bea4da8ac577bf998297c8a6924d44b5c5f7a",
+          "patches": [],
+          "patched_sha256": "db780c523c840187a647b78dd67bea4da8ac577bf998297c8a6924d44b5c5f7a"
+        }
+      ]
+    },
+    {
+      "name": "button-card",
+      "repo": "custom-cards/button-card",
+      "ref": "v7.0.1",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/custom-cards/button-card/releases/download/v7.0.1/button-card.js",
+          "out": "button-card/button-card.js",
+          "sha256": "5d6e9c6afca01e8014653fa56bb5d6aa9248d832c34fb944a7f2c36329bc22d1",
+          "patches": [],
+          "patched_sha256": "5d6e9c6afca01e8014653fa56bb5d6aa9248d832c34fb944a7f2c36329bc22d1"
+        }
+      ]
+    },
+    {
+      "name": "card-mod",
+      "repo": "thomasloven/lovelace-card-mod",
+      "ref": "v4.2.1",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/thomasloven/lovelace-card-mod/v4.2.1/card-mod.js",
+          "out": "card-mod/card-mod.js",
+          "sha256": "5e7e71ad61796f59070f8c4621e69fa8e71a9864d0be0922bc4dbc72f990cd35",
+          "patches": [],
+          "patched_sha256": "5e7e71ad61796f59070f8c4621e69fa8e71a9864d0be0922bc4dbc72f990cd35"
+        }
+      ]
+    },
+    {
+      "name": "custom-card-features",
+      "repo": "Nerwyn/custom-card-features",
+      "ref": "4.11.2",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/Nerwyn/custom-card-features/4.11.2/dist/custom-card-features.min.js",
+          "out": "custom-card-features/custom-card-features.min.js",
+          "sha256": "6090e6dee208da7aef053f496d6bfc355a0f9b41c7201c072dfaadcf28968146",
+          "patches": [
+            "ccf-no-eval-action"
+          ],
+          "patched_sha256": "3b8c31bd199fbef8d2649488b740ecc9df6c29ef7eba9cc55432e329b36af987"
+        }
+      ]
+    },
+    {
+      "name": "expander-card",
+      "repo": "Alia5/lovelace-expander-card",
+      "ref": "0.1.5",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/Alia5/lovelace-expander-card/releases/download/0.1.5/lovelace-expander-card.js",
+          "out": "expander-card/lovelace-expander-card.js",
+          "sha256": "bce282abe503485f26919e0fd8d9216be7f8d16da5822567e7401d84e421ad08",
+          "patches": [],
+          "patched_sha256": "bce282abe503485f26919e0fd8d9216be7f8d16da5822567e7401d84e421ad08"
+        }
+      ]
+    },
+    {
+      "name": "material-you-utilities",
+      "repo": "Nerwyn/material-you-utilities",
+      "ref": "2.1.26",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/Nerwyn/material-you-utilities/2.1.26/dist/material-you-utilities.min.js",
+          "out": "material-you-utilities/material-you-utilities.min.js",
+          "sha256": "5f55fb8596eaa942e1d84227f99d30a968e0990087e91ad7707a92b3c55cd1bf",
+          "patches": [
+            "same-origin-fetch-prelude",
+            "myu-same-origin"
+          ],
+          "patched_sha256": "178c4430b8906b66a99747e38016b738b3d37ec69379ce6d916e5d451a9cb9ac"
+        }
+      ]
+    },
+    {
+      "name": "mushroom",
+      "repo": "piitaya/lovelace-mushroom",
+      "ref": "v5.2.3",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "src": "https://github.com/piitaya/lovelace-mushroom/releases/download/v5.2.3/mushroom.js",
+          "out": "mushroom/mushroom.js",
+          "sha256": "631668268e474d5357e0f17f161322499ea5c93a910431477e112653d7aa456b",
+          "patches": [],
+          "patched_sha256": "631668268e474d5357e0f17f161322499ea5c93a910431477e112653d7aa456b"
+        }
+      ]
+    },
+    {
+      "name": "navbar-card",
+      "repo": "joseluis9595/lovelace-navbar-card",
+      "ref": "v1.7.1",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/joseluis9595/lovelace-navbar-card/releases/download/v1.7.1/navbar-card.js",
+          "out": "navbar-card/navbar-card.js",
+          "sha256": "9b78172593e1f81b9c38b8c8b8a97d09d8dd0cccdfe81097f0cf06eb1e13b4b5",
+          "patches": [],
+          "patched_sha256": "9b78172593e1f81b9c38b8c8b8a97d09d8dd0cccdfe81097f0cf06eb1e13b4b5"
+        }
+      ]
+    },
+    {
+      "name": "paper-buttons-row",
+      "repo": "jcwillox/lovelace-paper-buttons-row",
+      "ref": "v2.3.1",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/jcwillox/lovelace-paper-buttons-row/releases/download/v2.3.1/paper-buttons-row.js",
+          "out": "paper-buttons-row/paper-buttons-row.js",
+          "sha256": "f690541447739abaf398c53b4961377be83519e7d2a23890b15b9d68d9a1afbc",
+          "patches": [],
+          "patched_sha256": "f690541447739abaf398c53b4961377be83519e7d2a23890b15b9d68d9a1afbc"
+        }
+      ]
+    },
+    {
+      "name": "simple-swipe-card",
+      "repo": "nutteloost/simple-swipe-card",
+      "ref": "v3.1.0",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/nutteloost/simple-swipe-card/releases/download/v3.1.0/simple-swipe-card.js",
+          "out": "simple-swipe-card/simple-swipe-card.js",
+          "sha256": "e691db2a95100647e43dbcec1c02963038860d61c0bb3ccacc96642d15e7e49a",
+          "patches": [],
+          "patched_sha256": "e691db2a95100647e43dbcec1c02963038860d61c0bb3ccacc96642d15e7e49a"
+        }
+      ]
+    },
+    {
+      "name": "simple-tabs",
+      "repo": "agoberg85/home-assistant-simple-tabs",
+      "ref": "v1.5.0",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/agoberg85/home-assistant-simple-tabs/releases/download/v1.5.0/simple-tabs.js",
+          "out": "simple-tabs/simple-tabs.js",
+          "sha256": "f896b3bb6b1799bc67937f83c45cbbf5b89f444eca1d68d18aa0cd652b02bc92",
+          "patches": [],
+          "patched_sha256": "f896b3bb6b1799bc67937f83c45cbbf5b89f444eca1d68d18aa0cd652b02bc92"
+        }
+      ]
+    },
+    {
+      "name": "streamline-card",
+      "repo": "brunosabot/streamline-card",
+      "ref": "v0.2.2",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/brunosabot/streamline-card/releases/download/v0.2.2/streamline-card.js",
+          "out": "streamline-card/streamline-card.js",
+          "sha256": "649dc1b7c24027e4b22392109a0053e3624a40b9b78f0ecfd2cf3be3c21aada9",
+          "patches": [
+            "same-origin-fetch-prelude",
+            "streamline-same-origin"
+          ],
+          "patched_sha256": "15721b6a4dcb97a948e1f064fee12b15a2f1a6b373b26b44e81fbeec487cc689"
+        }
+      ]
+    },
+    {
+      "name": "vertical-stack-in-card",
+      "repo": "ofekashery/vertical-stack-in-card",
+      "ref": "v1.1.4",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/ofekashery/vertical-stack-in-card/releases/download/v1.1.4/vertical-stack-in-card.js",
+          "out": "vertical-stack-in-card/vertical-stack-in-card.js",
+          "sha256": "8e3775a19ae79664acf94afe4ebfacdc701f7294d3c5da24a74f99b0deb39c37",
+          "patches": [],
+          "patched_sha256": "8e3775a19ae79664acf94afe4ebfacdc701f7294d3c5da24a74f99b0deb39c37"
+        }
+      ]
+    },
+    {
+      "name": "frosted-glass-manager",
+      "repo": "wessamlauf/frosted-glass-manager",
+      "ref": "v1.4",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/__init__.py",
+          "out": "custom_components/frosted_glass_manager/__init__.py",
+          "sha256": "9e3878d6c93fd6cd4c6bd4b2cf0813e8d312ce4667acf1679c3ff58c346b825c",
+          "patches": [],
+          "patched_sha256": "9e3878d6c93fd6cd4c6bd4b2cf0813e8d312ce4667acf1679c3ff58c346b825c"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/config_flow.py",
+          "out": "custom_components/frosted_glass_manager/config_flow.py",
+          "sha256": "e59ee9d41cef70c3404021608cb78918e772d0d80ba4dab1859d7968bf0c390f",
+          "patches": [],
+          "patched_sha256": "e59ee9d41cef70c3404021608cb78918e772d0d80ba4dab1859d7968bf0c390f"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/const.py",
+          "out": "custom_components/frosted_glass_manager/const.py",
+          "sha256": "2c4dc9a147bab573537114c8b54d2817e42fda24469d7d49e1017ca4f659a6c8",
+          "patches": [],
+          "patched_sha256": "2c4dc9a147bab573537114c8b54d2817e42fda24469d7d49e1017ca4f659a6c8"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/manifest.json",
+          "out": "custom_components/frosted_glass_manager/manifest.json",
+          "sha256": "f84fcd44d0a2743299fbbb35d75396f432911a5408af9e8f0bf221258ec43b0b",
+          "patches": [],
+          "patched_sha256": "f84fcd44d0a2743299fbbb35d75396f432911a5408af9e8f0bf221258ec43b0b"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/templates/frosted_glass.yaml",
+          "out": "custom_components/frosted_glass_manager/templates/frosted_glass.yaml",
+          "sha256": "b2d2500b9f7d1e9cc90bf389d994bdb71ac44df6e7977b05caa1442783e794f6",
+          "patches": [
+            "fgm-local-backgrounds"
+          ],
+          "patched_sha256": "b18462860d53d642d99017a672a43db9341fe21b79fb6f85da0efcff47ac73a6"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/templates/frosted_glass_lite.yaml",
+          "out": "custom_components/frosted_glass_manager/templates/frosted_glass_lite.yaml",
+          "sha256": "bd406b3c3629a6bb740ed3eac5f58419174ca35f30397a7c479b3bd851cb6264",
+          "patches": [
+            "fgm-local-backgrounds"
+          ],
+          "patched_sha256": "046c32df431ca4bbdc1be7c26028d94a74a3caeaedc4a9a349b0a1a89ca16850"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/theme_generator.py",
+          "out": "custom_components/frosted_glass_manager/theme_generator.py",
+          "sha256": "6f656889c987e9fda78337946e06c918fe2aa1e2e04ed8a15e401eb184f157d5",
+          "patches": [
+            "fgm-local-backgrounds"
+          ],
+          "patched_sha256": "740d872597b3f24e6fac19042bc9854eea2dc8a4827b6881fa3b39588e6adc36"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/frosted-glass-manager/v1.4/custom_components/frosted_glass_manager/translations/en.json",
+          "out": "custom_components/frosted_glass_manager/translations/en.json",
+          "sha256": "e051d9d7778cae2c13c64c196b3d9f33c57db4c2327d5de010ea169368d3abb3",
+          "patches": [],
+          "patched_sha256": "e051d9d7778cae2c13c64c196b3d9f33c57db4c2327d5de010ea169368d3abb3"
+        }
+      ]
+    },
+    {
+      "name": "frosted-glass",
+      "repo": "wessamlauf/homeassistant-frosted-glass-themes",
+      "ref": "320583a546dfef0d4e07311ee805de80f0db331a",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/homeassistant-frosted-glass-themes/320583a546dfef0d4e07311ee805de80f0db331a/themes/frosted-glass-light-background.jpg",
+          "out": "frosted-glass/frosted-glass-light-background.jpg",
+          "sha256": "65933fe56f164fdb90b128e36bb02a081462f080f15f4abb0c648d4f523e3de9",
+          "patches": [],
+          "patched_sha256": "65933fe56f164fdb90b128e36bb02a081462f080f15f4abb0c648d4f523e3de9"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/wessamlauf/homeassistant-frosted-glass-themes/320583a546dfef0d4e07311ee805de80f0db331a/themes/frosted-glass-dark-background.jpg",
+          "out": "frosted-glass/frosted-glass-dark-background.jpg",
+          "sha256": "eac88b163219e3c278856ee7794ad2c74198c62276bf1b0f675c6a021b8cc53c",
+          "patches": [],
+          "patched_sha256": "eac88b163219e3c278856ee7794ad2c74198c62276bf1b0f675c6a021b8cc53c"
+        }
+      ]
+    }
+  ]
+}
