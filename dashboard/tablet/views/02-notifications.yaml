@@ -199,7 +199,6 @@
             type: custom:location-timeline-card
             entity: device_tracker.rey_s_phone
             places_entity: sensor.rey_s_phone
-            osm_api_key: email
         - title: Christina
           icon: m3of:face-3
           id: christina
@@ -207,7 +206,6 @@
             type: custom:location-timeline-card
             entity: device_tracker.christina
             places_entity: sensor.christina_s_phone
-            osm_api_key: email
 
       view_layout:
         grid-area: active1

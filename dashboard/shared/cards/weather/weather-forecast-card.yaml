@@ -92,8 +92,7 @@ tabs:
                 icon: mdi:weather-lightning
                 content: MetService
                 tap_action:
-                  action: url
-                  url_path: https://www.metservice.com/warnings/home
+                  action: none
                 uix:
                   style:
                     .: |
@@ -142,8 +141,7 @@ tabs:
                     icon: mdi:weather-lightning
                     content: MetService
                     tap_action:
-                      action: url
-                      url_path: https://www.metservice.com/warnings/home
+                      action: none
                     uix:
                       style:
                         .: |
@@ -711,31 +709,3 @@ tabs:
         location:
           city: ""
           country: New Zealand
-        custom_background: >-
-          https://cdn.jsdelivr.net/gh/ngocjohn/lunar-phase-card@1.7.3/background/moon_bg_2.png
-  - title: Radar
-    icon: m3of:radar
-    cards:
-      - type: custom:streamline-card
-        template: title_subtitle_navigation_card
-        variables:
-          title: Radar
-          subtitle: >-
-            {% set w = states.weather.home.attributes %}🌡️ {{
-            w.temperature }}{{ w.temperature_unit }} 💧 Humidity: {{
-            w.humidity }}% 👁️ Visibility: {{ w.visibility }}km ☁️ Clouds:
-            {{ w.cloud_coverage | round }}% 💨 Wind: {{ w.wind_speed }} {{
-            w.wind_speed_unit }} 🌤️ UV index: {{ w.uv_index }}
-          navigation_path: /tablet-dashboard/radar
-          title_font_size: 20px
-      - type: custom:mod-card
-        card:
-          type: iframe
-          url: >-
-            https://embed.windy.com/embed2.html?lat=xx&lon=yy&width=800&height=600
-        style: |
-          ha-card {
-            padding: 0;
-            height: 575px !important;
-            width: 100% !important;
-            overflow: hidden;

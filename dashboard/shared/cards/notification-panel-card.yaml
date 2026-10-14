@@ -84,23 +84,6 @@ cards:
           value_color: "#DE6464"
           unit_color: var(--secondary-text-color)
           icon_color: "#FFA6A6"
-        - type: custom:streamline-card
-          template: title_card
-          variables:
-            title: Radar
-            title_font_size: 20px
-        - type: custom:mod-card
-          card:
-            type: iframe
-            url: >-
-              https://embed.windy.com/embed2.html?lat=-36.85&lon=174.76&width=800&height=600
-          style: |
-            ha-card {
-              padding: 0;
-              height: 385px !important;
-              width: 100% !important;
-              overflow: hidden;
-            }
   - type: conditional
     conditions:
       - condition: state
