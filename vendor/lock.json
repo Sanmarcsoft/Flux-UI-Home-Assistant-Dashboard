@@ -82,6 +82,18 @@
       "find": "function mc(e){const t=eval;return",
       "replace": "function mc(e){const t=null;return",
       "count": 1
+    },
+    "plotly-no-config-eval": {
+      "id": "plotly-no-config-eval",
+      "find": "const wo=typeof window<`u`?window.eval:global.eval;",
+      "replace": "const wo=()=>{throw Error(`$fn/$ex disabled by Sanmarcsoft hardening`)};",
+      "count": 1
+    },
+    "plotly-no-filter-eval": {
+      "id": "plotly-no-filter-eval",
+      "find": "no=typeof window<`u`?window.eval:global.eval,",
+      "replace": "no=()=>{throw Error(`filter expressions disabled by Sanmarcsoft hardening`)},",
+      "count": 1
     }
   },
   "entries": [
@@ -417,6 +429,717 @@
             "apex-no-eval-ref"
           ],
           "patched_sha256": "4546b15ef2d83fc504ece025187fdbd120cfdf11e729a8c12b7835df53a9a0b1"
+        }
+      ]
+    },
+    {
+      "name": "plotly-graph-card",
+      "repo": "dbuezas/lovelace-plotly-graph-card",
+      "ref": "v4.0.2",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/af-DT1XQW9D.js",
+          "out": "plotly-graph-card/af-DT1XQW9D.js",
+          "sha256": "48f76480b190c3c29f8cf1cb49a1dc58696c6c3b3d2b8efb5cc2a750d3871eca",
+          "patches": [],
+          "patched_sha256": "48f76480b190c3c29f8cf1cb49a1dc58696c6c3b3d2b8efb5cc2a750d3871eca"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/am-BLdEFaXW.js",
+          "out": "plotly-graph-card/am-BLdEFaXW.js",
+          "sha256": "8035a0f5a6e72d694a8d668b06c82abf3147f3b8bd9aa81473b1b49d8c95e835",
+          "patches": [],
+          "patched_sha256": "8035a0f5a6e72d694a8d668b06c82abf3147f3b8bd9aa81473b1b49d8c95e835"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ar-C01z-XKS.js",
+          "out": "plotly-graph-card/ar-C01z-XKS.js",
+          "sha256": "f8f90f23f4cf99cd976de416b4b60f60806f61f90db9f454fb05821173013d1f",
+          "patches": [],
+          "patched_sha256": "f8f90f23f4cf99cd976de416b4b60f60806f61f90db9f454fb05821173013d1f"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ar-dz-B1lEImWf.js",
+          "out": "plotly-graph-card/ar-dz-B1lEImWf.js",
+          "sha256": "a1ce13e8531f6cfe4bcab25d6b9cfc783deffe3b894d4485395cb42e8b1182b8",
+          "patches": [],
+          "patched_sha256": "a1ce13e8531f6cfe4bcab25d6b9cfc783deffe3b894d4485395cb42e8b1182b8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ar-eg-BgEZ7L5q.js",
+          "out": "plotly-graph-card/ar-eg-BgEZ7L5q.js",
+          "sha256": "3d7b7239042987d55374c083d0f285167b91df21c5e103c0adc1fb8e671f7b3f",
+          "patches": [],
+          "patched_sha256": "3d7b7239042987d55374c083d0f285167b91df21c5e103c0adc1fb8e671f7b3f"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/az-C01kGbZp.js",
+          "out": "plotly-graph-card/az-C01kGbZp.js",
+          "sha256": "3a13c6431a2402f3d41368bba6165bd42f062530f5032a95afa68a8df681b86e",
+          "patches": [],
+          "patched_sha256": "3a13c6431a2402f3d41368bba6165bd42f062530f5032a95afa68a8df681b86e"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/bg-CxsK-Zr3.js",
+          "out": "plotly-graph-card/bg-CxsK-Zr3.js",
+          "sha256": "fbbc5d52321f655413378c295f031ab1b8a82e91ae29ffd1c027df711f4f4ca5",
+          "patches": [],
+          "patched_sha256": "fbbc5d52321f655413378c295f031ab1b8a82e91ae29ffd1c027df711f4f4ca5"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/browser-BRIDZVsY.js",
+          "out": "plotly-graph-card/browser-BRIDZVsY.js",
+          "sha256": "18d10aeaf1a859f814e30b2733928ac67810fd607b6f3e0667220af6efce34a8",
+          "patches": [],
+          "patched_sha256": "18d10aeaf1a859f814e30b2733928ac67810fd607b6f3e0667220af6efce34a8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/bs-B6aUyB-m.js",
+          "out": "plotly-graph-card/bs-B6aUyB-m.js",
+          "sha256": "45eabe7c51d3929f0b4776f6180b9c439639cc3e9e88cc77aa712d1b30e7ebf6",
+          "patches": [],
+          "patched_sha256": "45eabe7c51d3929f0b4776f6180b9c439639cc3e9e88cc77aa712d1b30e7ebf6"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ca-CubmO8Ex.js",
+          "out": "plotly-graph-card/ca-CubmO8Ex.js",
+          "sha256": "9f8212027be33cb25644a3bbff1198a1284505c1efa0732ec6c75e993019b72a",
+          "patches": [],
+          "patched_sha256": "9f8212027be33cb25644a3bbff1198a1284505c1efa0732ec6c75e993019b72a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/calendars-CfFpfDBh.js",
+          "out": "plotly-graph-card/calendars-CfFpfDBh.js",
+          "sha256": "c40e0abc2e1558a5789addd5012c9dd99f56a2b39569ff8a3e9e021d53fbfef8",
+          "patches": [],
+          "patched_sha256": "c40e0abc2e1558a5789addd5012c9dd99f56a2b39569ff8a3e9e021d53fbfef8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/card-BgJGmfH_.js",
+          "out": "plotly-graph-card/card-BgJGmfH_.js",
+          "sha256": "e6ce34dc48d6f67c547e9db1de9c5a749e27ce9176aa2155357626d65f7e8f18",
+          "patches": [
+            "plotly-no-config-eval",
+            "plotly-no-filter-eval"
+          ],
+          "patched_sha256": "402180590f9863613886d7baede3d0d6c790d4e3155a6e495ada9dd7c4e56b3a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/charts2d-DOIFNKys.js",
+          "out": "plotly-graph-card/charts2d-DOIFNKys.js",
+          "sha256": "e2f2271ed7e2dc19864f118814e5c42b7bc77e417162d0ae1a920cb79445dfe3",
+          "patches": [],
+          "patched_sha256": "e2f2271ed7e2dc19864f118814e5c42b7bc77e417162d0ae1a920cb79445dfe3"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/colorbar-b_uDteVB.js",
+          "out": "plotly-graph-card/colorbar-b_uDteVB.js",
+          "sha256": "33c030c877ac0770791b00a772f4a34abd3963fa15fd14c5991b0df7d059276e",
+          "patches": [],
+          "patched_sha256": "33c030c877ac0770791b00a772f4a34abd3963fa15fd14c5991b0df7d059276e"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/cs-DE6OXY5e.js",
+          "out": "plotly-graph-card/cs-DE6OXY5e.js",
+          "sha256": "147f3237b1aac84831e294d345a6b5e4f30d4534c35869fb551225e29a250073",
+          "patches": [],
+          "patched_sha256": "147f3237b1aac84831e294d345a6b5e4f30d4534c35869fb551225e29a250073"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/cy-qhPNnOLs.js",
+          "out": "plotly-graph-card/cy-qhPNnOLs.js",
+          "sha256": "b1bbac0f9ee372d349998eea48997923d8618020c15692a8b8a73b02057489e9",
+          "patches": [],
+          "patched_sha256": "b1bbac0f9ee372d349998eea48997923d8618020c15692a8b8a73b02057489e9"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/da-CIQ31tcg.js",
+          "out": "plotly-graph-card/da-CIQ31tcg.js",
+          "sha256": "b80245a8dab025e6f23e882a12b58d3390c961b00ff1e53fac59f7d0e9d06640",
+          "patches": [],
+          "patched_sha256": "b80245a8dab025e6f23e882a12b58d3390c961b00ff1e53fac59f7d0e9d06640"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/de-DBp-1MLI.js",
+          "out": "plotly-graph-card/de-DBp-1MLI.js",
+          "sha256": "48f5bb2d0bd0150f36f6c4f7f44cb7bec496bfad9016b188a137026a701788a8",
+          "patches": [],
+          "patched_sha256": "48f5bb2d0bd0150f36f6c4f7f44cb7bec496bfad9016b188a137026a701788a8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/de-ch-Bve-akkZ.js",
+          "out": "plotly-graph-card/de-ch-Bve-akkZ.js",
+          "sha256": "a6ccfa8135b103497100573ba808e10c6834d2a14dc594fc594847fc2583337a",
+          "patches": [],
+          "patched_sha256": "a6ccfa8135b103497100573ba808e10c6834d2a14dc594fc594847fc2583337a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/el-pU4fCDtE.js",
+          "out": "plotly-graph-card/el-pU4fCDtE.js",
+          "sha256": "95602314e8c60b328361ff3025f39e80eeaa0fe2641fcfeef3e4b9c785a41c34",
+          "patches": [],
+          "patched_sha256": "95602314e8c60b328361ff3025f39e80eeaa0fe2641fcfeef3e4b9c785a41c34"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/eo-BMG2Yk9-.js",
+          "out": "plotly-graph-card/eo-BMG2Yk9-.js",
+          "sha256": "9c4b14bcb81b8cc23653808260310d8c83a4d962e8f566e36727fed860c16bb2",
+          "patches": [],
+          "patched_sha256": "9c4b14bcb81b8cc23653808260310d8c83a4d962e8f566e36727fed860c16bb2"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/es-Du5Bqbj5.js",
+          "out": "plotly-graph-card/es-Du5Bqbj5.js",
+          "sha256": "3d2e4c5b07f094f253a9f06e1dc416019ea58e5ee725ac31562df90b1486c293",
+          "patches": [],
+          "patched_sha256": "3d2e4c5b07f094f253a9f06e1dc416019ea58e5ee725ac31562df90b1486c293"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/es-ar-DodX4QRN.js",
+          "out": "plotly-graph-card/es-ar-DodX4QRN.js",
+          "sha256": "750c6cc1b6e34c8fadebad803c591cc1700c526acaf33e104d69f0b9b7d600f1",
+          "patches": [],
+          "patched_sha256": "750c6cc1b6e34c8fadebad803c591cc1700c526acaf33e104d69f0b9b7d600f1"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/es-pe-DyXLSDSB.js",
+          "out": "plotly-graph-card/es-pe-DyXLSDSB.js",
+          "sha256": "006ea26cc9ca5bb2ea4190e3cc28a35be98dcbef5079af1cdd7d97bf81ea431b",
+          "patches": [],
+          "patched_sha256": "006ea26cc9ca5bb2ea4190e3cc28a35be98dcbef5079af1cdd7d97bf81ea431b"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/et-QcZhr5e_.js",
+          "out": "plotly-graph-card/et-QcZhr5e_.js",
+          "sha256": "9754ff257db2c9555fea02f0435d8264742b454ac27f6847336bf89385842ac2",
+          "patches": [],
+          "patched_sha256": "9754ff257db2c9555fea02f0435d8264742b454ac27f6847336bf89385842ac2"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/eu-DNymx9lP.js",
+          "out": "plotly-graph-card/eu-DNymx9lP.js",
+          "sha256": "f4d1e156d5604f5c3403fa07668170925abd7bd0ef655ef805b9aae1bfa04132",
+          "patches": [],
+          "patched_sha256": "f4d1e156d5604f5c3403fa07668170925abd7bd0ef655ef805b9aae1bfa04132"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/fa-DEYyJFEb.js",
+          "out": "plotly-graph-card/fa-DEYyJFEb.js",
+          "sha256": "513c7ce56165e73612949d7de190026e1c3a94bd317fef41c4d6ef625c648ad8",
+          "patches": [],
+          "patched_sha256": "513c7ce56165e73612949d7de190026e1c3a94bd317fef41c4d6ef625c648ad8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/fi-CIeEIT5Y.js",
+          "out": "plotly-graph-card/fi-CIeEIT5Y.js",
+          "sha256": "e751c7868b6f30c74b296aad7f0e1424b363d38209f352d21eaecc7716471bc4",
+          "patches": [],
+          "patched_sha256": "e751c7868b6f30c74b296aad7f0e1424b363d38209f352d21eaecc7716471bc4"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/find_empties-DimuV2ZN.js",
+          "out": "plotly-graph-card/find_empties-DimuV2ZN.js",
+          "sha256": "8e63476a72a2eb142ced7ba7d91f8a198ba9f809649f2fb3bdff19d1637ed9e7",
+          "patches": [],
+          "patched_sha256": "8e63476a72a2eb142ced7ba7d91f8a198ba9f809649f2fb3bdff19d1637ed9e7"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/fo-CTPIncbX.js",
+          "out": "plotly-graph-card/fo-CTPIncbX.js",
+          "sha256": "21f3df763b2c15fedced3050c7a5c81d79a2983ec1c28de6663e56027f5fb212",
+          "patches": [],
+          "patched_sha256": "21f3df763b2c15fedced3050c7a5c81d79a2983ec1c28de6663e56027f5fb212"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/fr-ch-DmBh-JBv.js",
+          "out": "plotly-graph-card/fr-ch-DmBh-JBv.js",
+          "sha256": "1ed43c9df6b28f908e565b65ee27ae0749c70496e6af2a2a75eec040316905ac",
+          "patches": [],
+          "patched_sha256": "1ed43c9df6b28f908e565b65ee27ae0749c70496e6af2a2a75eec040316905ac"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/fr-gfi-1HYU.js",
+          "out": "plotly-graph-card/fr-gfi-1HYU.js",
+          "sha256": "8cfce77b791e37d4e707480874f2f5812cf425ba82eaa6734bf3d0c385f979e0",
+          "patches": [],
+          "patched_sha256": "8cfce77b791e37d4e707480874f2f5812cf425ba82eaa6734bf3d0c385f979e0"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/gl-CyRL4kM2.js",
+          "out": "plotly-graph-card/gl-CyRL4kM2.js",
+          "sha256": "878275ad47da7b9bb6620e42e9e8c89519f8ebabbe863fad6e32c0d61ffc3b13",
+          "patches": [],
+          "patched_sha256": "878275ad47da7b9bb6620e42e9e8c89519f8ebabbe863fad6e32c0d61ffc3b13"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/gl2d-ZjyFzDJb.js",
+          "out": "plotly-graph-card/gl2d-ZjyFzDJb.js",
+          "sha256": "5a9bfe94b2c6c4daed9532d7f4a8b2e6beb332289348dae66ae083cb45f22763",
+          "patches": [],
+          "patched_sha256": "5a9bfe94b2c6c4daed9532d7f4a8b2e6beb332289348dae66ae083cb45f22763"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/gl3d-CQfDDvGK.js",
+          "out": "plotly-graph-card/gl3d-CQfDDvGK.js",
+          "sha256": "09de4786a28d528c04b8cd7a0423ee748fa72695b63788fa1e57e852ce6f3f07",
+          "patches": [],
+          "patched_sha256": "09de4786a28d528c04b8cd7a0423ee748fa72695b63788fa1e57e852ce6f3f07"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/gu-D6inC7Eu.js",
+          "out": "plotly-graph-card/gu-D6inC7Eu.js",
+          "sha256": "668cc02a5690e90991fa4e14472f41c93bac27105752636784145bba61d2de17",
+          "patches": [],
+          "patched_sha256": "668cc02a5690e90991fa4e14472f41c93bac27105752636784145bba61d2de17"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/gup-DDjnhIrs.js",
+          "out": "plotly-graph-card/gup-DDjnhIrs.js",
+          "sha256": "dd034b1893350fa1451755f9b59347ca555bc96e01b3c05fa5993b9364ef391d",
+          "patches": [],
+          "patched_sha256": "dd034b1893350fa1451755f9b59347ca555bc96e01b3c05fa5993b9364ef391d"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/he-CuAW54jz.js",
+          "out": "plotly-graph-card/he-CuAW54jz.js",
+          "sha256": "b853d12dc2c5a8871d5cbc8438c51fd6347c70a2bbaad0db0fbf3be078769b5a",
+          "patches": [],
+          "patched_sha256": "b853d12dc2c5a8871d5cbc8438c51fd6347c70a2bbaad0db0fbf3be078769b5a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/hi-in-8I0quIAS.js",
+          "out": "plotly-graph-card/hi-in-8I0quIAS.js",
+          "sha256": "38129cafc2cb9d4fb4767b00d96473e6901ce8d63ad7946cbd03dcb3344e8939",
+          "patches": [],
+          "patched_sha256": "38129cafc2cb9d4fb4767b00d96473e6901ce8d63ad7946cbd03dcb3344e8939"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/hierarchy-pzf0yJii.js",
+          "out": "plotly-graph-card/hierarchy-pzf0yJii.js",
+          "sha256": "29ef38d105b6f09f8ce349d11b53a47e61a87407351a99cbacdf127b5157a58e",
+          "patches": [],
+          "patched_sha256": "29ef38d105b6f09f8ce349d11b53a47e61a87407351a99cbacdf127b5157a58e"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/hr-HDi3oSDB.js",
+          "out": "plotly-graph-card/hr-HDi3oSDB.js",
+          "sha256": "cd8d97cd67159b3dc05c409a52209c4db91e080e0e13240728cfb5529c40c33c",
+          "patches": [],
+          "patched_sha256": "cd8d97cd67159b3dc05c409a52209c4db91e080e0e13240728cfb5529c40c33c"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/hu-GF9r14vV.js",
+          "out": "plotly-graph-card/hu-GF9r14vV.js",
+          "sha256": "f45468cc60341a4c4a2573c45b1f27a4a217c6b9fff2463f283ec0214c7e28e6",
+          "patches": [],
+          "patched_sha256": "f45468cc60341a4c4a2573c45b1f27a4a217c6b9fff2463f283ec0214c7e28e6"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/hy-CuDj7Mwq.js",
+          "out": "plotly-graph-card/hy-CuDj7Mwq.js",
+          "sha256": "c93d0a97e4f18120ce68b26a7f522fce83ec066d8a38a9e63c56305d0a882553",
+          "patches": [],
+          "patched_sha256": "c93d0a97e4f18120ce68b26a7f522fce83ec066d8a38a9e63c56305d0a882553"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/id-CZObP7n-.js",
+          "out": "plotly-graph-card/id-CZObP7n-.js",
+          "sha256": "c77cb84dd4a8b57f43bf82afc1c4622b698faca122d5668f91e44666ae5c0bbb",
+          "patches": [],
+          "patched_sha256": "c77cb84dd4a8b57f43bf82afc1c4622b698faca122d5668f91e44666ae5c0bbb"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/image-D4iigQg6.js",
+          "out": "plotly-graph-card/image-D4iigQg6.js",
+          "sha256": "35a67345ceffe61ebc7d8354eeac6942b0baad62dca8b5a37ab6a0e0af036920",
+          "patches": [],
+          "patched_sha256": "35a67345ceffe61ebc7d8354eeac6942b0baad62dca8b5a37ab6a0e0af036920"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/is-DrFK2kg9.js",
+          "out": "plotly-graph-card/is-DrFK2kg9.js",
+          "sha256": "8be5d34c6b958f276868d60935de66c084bb8a070c7926e03688da17a3bea83d",
+          "patches": [],
+          "patched_sha256": "8be5d34c6b958f276868d60935de66c084bb8a070c7926e03688da17a3bea83d"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/it-BYXIBAM9.js",
+          "out": "plotly-graph-card/it-BYXIBAM9.js",
+          "sha256": "9d69a4bdc5edc6b1b423ed1a60801adef6b122ab9e16f76f4f0aa72cbb44fb7a",
+          "patches": [],
+          "patched_sha256": "9d69a4bdc5edc6b1b423ed1a60801adef6b122ab9e16f76f4f0aa72cbb44fb7a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ja-MDu0K8RY.js",
+          "out": "plotly-graph-card/ja-MDu0K8RY.js",
+          "sha256": "dd0fa93ee920166f205f1f64d74c84b0579a38a4731363588039e763dde2bf26",
+          "patches": [],
+          "patched_sha256": "dd0fa93ee920166f205f1f64d74c84b0579a38a4731363588039e763dde2bf26"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ka-Bh9A67MR.js",
+          "out": "plotly-graph-card/ka-Bh9A67MR.js",
+          "sha256": "ed055b69074253e8588a773f8406943cdcc49754e5e24d02afc7690233494088",
+          "patches": [],
+          "patched_sha256": "ed055b69074253e8588a773f8406943cdcc49754e5e24d02afc7690233494088"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/km-B1gKgKBv.js",
+          "out": "plotly-graph-card/km-B1gKgKBv.js",
+          "sha256": "4fea4020605a407faac7c470ae9d77761dcf33875e02918671bee94cd91551ad",
+          "patches": [],
+          "patched_sha256": "4fea4020605a407faac7c470ae9d77761dcf33875e02918671bee94cd91551ad"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ko-CgkXLbQr.js",
+          "out": "plotly-graph-card/ko-CgkXLbQr.js",
+          "sha256": "0ece29cd79ec774a3385ac9bccefcb0a3ae6f10ef360b03f2484ff6895ddfa2e",
+          "patches": [],
+          "patched_sha256": "0ece29cd79ec774a3385ac9bccefcb0a3ae6f10ef360b03f2484ff6895ddfa2e"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/lt-CBThREg0.js",
+          "out": "plotly-graph-card/lt-CBThREg0.js",
+          "sha256": "a7e9458f26550343245b73860ccfb5bd4e1a504d1e079acea0b943afdde6e1ad",
+          "patches": [],
+          "patched_sha256": "a7e9458f26550343245b73860ccfb5bd4e1a504d1e079acea0b943afdde6e1ad"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/lv-CcoG4-K7.js",
+          "out": "plotly-graph-card/lv-CcoG4-K7.js",
+          "sha256": "5bac35780bba3875e1dded6c34ca37d5ab8bb5c544da9a8b2ebb3f7b6b6ab748",
+          "patches": [],
+          "patched_sha256": "5bac35780bba3875e1dded6c34ca37d5ab8bb5c544da9a8b2ebb3f7b6b6ab748"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/me-BFgp_0by.js",
+          "out": "plotly-graph-card/me-BFgp_0by.js",
+          "sha256": "66b863b29bf64220e5efba1774e22ce091dd08f0656bf04509f82c14eca9a835",
+          "patches": [],
+          "patched_sha256": "66b863b29bf64220e5efba1774e22ce091dd08f0656bf04509f82c14eca9a835"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/me-me-uRaYpib8.js",
+          "out": "plotly-graph-card/me-me-uRaYpib8.js",
+          "sha256": "8ce9656c124c983dbc49a8cacdf7fa1567a02e4e07227a24c8b7fb7fb8789bb5",
+          "patches": [],
+          "patched_sha256": "8ce9656c124c983dbc49a8cacdf7fa1567a02e4e07227a24c8b7fb7fb8789bb5"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/merge_length-BjgiDGoo.js",
+          "out": "plotly-graph-card/merge_length-BjgiDGoo.js",
+          "sha256": "81a7a3e23db4b5de48fa18623bd5781b2414d60ebe0d9bfd62c24e65c745b488",
+          "patches": [],
+          "patched_sha256": "81a7a3e23db4b5de48fa18623bd5781b2414d60ebe0d9bfd62c24e65c745b488"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/mk-B8i5x8mR.js",
+          "out": "plotly-graph-card/mk-B8i5x8mR.js",
+          "sha256": "3ea7ff2e2028a3e254cc2e6b521206ff68d87dcd7b078f77ed7e5bb66a7b2131",
+          "patches": [],
+          "patched_sha256": "3ea7ff2e2028a3e254cc2e6b521206ff68d87dcd7b078f77ed7e5bb66a7b2131"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ml-BMPBWT5s.js",
+          "out": "plotly-graph-card/ml-BMPBWT5s.js",
+          "sha256": "e87804a70aa28711b7b4974cf6de43f290a12a938b7f42cb87c062a49db54648",
+          "patches": [],
+          "patched_sha256": "e87804a70aa28711b7b4974cf6de43f290a12a938b7f42cb87c062a49db54648"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ms-CWPEww5M.js",
+          "out": "plotly-graph-card/ms-CWPEww5M.js",
+          "sha256": "f0d88435115b4bd690c5cefb14a7beccf628670c5ab579ea1b8427dc7c018f9c",
+          "patches": [],
+          "patched_sha256": "f0d88435115b4bd690c5cefb14a7beccf628670c5ab579ea1b8427dc7c018f9c"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/mt-CJX6q10j.js",
+          "out": "plotly-graph-card/mt-CJX6q10j.js",
+          "sha256": "9fc66ce0943928ff8291a255cb4f113514d74ab8323abd5518c774bb87746db2",
+          "patches": [],
+          "patched_sha256": "9fc66ce0943928ff8291a255cb4f113514d74ab8323abd5518c774bb87746db2"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/nl-BKcrzP6d.js",
+          "out": "plotly-graph-card/nl-BKcrzP6d.js",
+          "sha256": "cd2f37e886f43d634d10631d86345d68da7666eec8dc24bb746d476985b6d174",
+          "patches": [],
+          "patched_sha256": "cd2f37e886f43d634d10631d86345d68da7666eec8dc24bb746d476985b6d174"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/nl-be-DIi798dG.js",
+          "out": "plotly-graph-card/nl-be-DIi798dG.js",
+          "sha256": "8b424b484546354708c8d055b6aa1d1a79fd4583e01f65a7ec57abddb83fd6f3",
+          "patches": [],
+          "patched_sha256": "8b424b484546354708c8d055b6aa1d1a79fd4583e01f65a7ec57abddb83fd6f3"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/no-8vDUJHgX.js",
+          "out": "plotly-graph-card/no-8vDUJHgX.js",
+          "sha256": "c4847fb7b646922a89a5cb3d68c6c5482398a7066d682100fdf2781481197990",
+          "patches": [],
+          "patched_sha256": "c4847fb7b646922a89a5cb3d68c6c5482398a7066d682100fdf2781481197990"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/object-assign-DsgQhYSW.js",
+          "out": "plotly-graph-card/object-assign-DsgQhYSW.js",
+          "sha256": "0e0f8b3ee75cafbcc857429ba742e75f659e792992466e4a4cc2f5bec1b15ee0",
+          "patches": [],
+          "patched_sha256": "0e0f8b3ee75cafbcc857429ba742e75f659e792992466e4a4cc2f5bec1b15ee0"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/pa-BEZ7jb0N.js",
+          "out": "plotly-graph-card/pa-BEZ7jb0N.js",
+          "sha256": "1afd56b52319e04aee08ede4f016f4e72b978caab75cbb87a30555b2d22c8607",
+          "patches": [],
+          "patched_sha256": "1afd56b52319e04aee08ede4f016f4e72b978caab75cbb87a30555b2d22c8607"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/pie-uLPHeemu.js",
+          "out": "plotly-graph-card/pie-uLPHeemu.js",
+          "sha256": "2b45c67834288601ba5fe50b83145e21148bb5ea5d5e1defd1358b9f1e8395dc",
+          "patches": [],
+          "patched_sha256": "2b45c67834288601ba5fe50b83145e21148bb5ea5d5e1defd1358b9f1e8395dc"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/pl-CN-HUBQS.js",
+          "out": "plotly-graph-card/pl-CN-HUBQS.js",
+          "sha256": "9f30955b5db2abbb5316f9dce72f375e61101ecae9188eb63ebbe6d36d97aa4f",
+          "patches": [],
+          "patched_sha256": "9f30955b5db2abbb5316f9dce72f375e61101ecae9188eb63ebbe6d36d97aa4f"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/plot-Di7z8ETF.js",
+          "out": "plotly-graph-card/plot-Di7z8ETF.js",
+          "sha256": "e7f4af9d089033e69cecb74c090fa1278ce2efaee1cc6a1e55813aebad9a1aa9",
+          "patches": [],
+          "patched_sha256": "e7f4af9d089033e69cecb74c090fa1278ce2efaee1cc6a1e55813aebad9a1aa9"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/plotly-DHew52Zl.js",
+          "out": "plotly-graph-card/plotly-DHew52Zl.js",
+          "sha256": "d233ebf29cdb0dd8903873fab446240ceadce541f86c9d33171298899b0160ac",
+          "patches": [],
+          "patched_sha256": "d233ebf29cdb0dd8903873fab446240ceadce541f86c9d33171298899b0160ac"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/plotly-graph-card.js",
+          "out": "plotly-graph-card/plotly-graph-card.js",
+          "sha256": "a02e1bf9022f54026f801762a29e02e724f031a964043a1c2a797baa9e46f2a9",
+          "patches": [],
+          "patched_sha256": "a02e1bf9022f54026f801762a29e02e724f031a964043a1c2a797baa9e46f2a9"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/pt-br-MxAIqJSv.js",
+          "out": "plotly-graph-card/pt-br-MxAIqJSv.js",
+          "sha256": "8c9a936e7091167c0e0fcf7827a09a0cc6829b2a0ee591e75c07a8da377b0c37",
+          "patches": [],
+          "patched_sha256": "8c9a936e7091167c0e0fcf7827a09a0cc6829b2a0ee591e75c07a8da377b0c37"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/pt-pt-F8MS4DK5.js",
+          "out": "plotly-graph-card/pt-pt-F8MS4DK5.js",
+          "sha256": "6a5d0e7f18bb4f806582005b0a402563c2a58b67f455f4a7845dc12ef6c0395a",
+          "patches": [],
+          "patched_sha256": "6a5d0e7f18bb4f806582005b0a402563c2a58b67f455f4a7845dc12ef6c0395a"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/rm-DqWEzb-b.js",
+          "out": "plotly-graph-card/rm-DqWEzb-b.js",
+          "sha256": "66c3101bb14f6410fb16400a279b1dcf9ba0e291ff374fdb822bf162ec0b3c4d",
+          "patches": [],
+          "patched_sha256": "66c3101bb14f6410fb16400a279b1dcf9ba0e291ff374fdb822bf162ec0b3c4d"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ro-Jdw4Ghpk.js",
+          "out": "plotly-graph-card/ro-Jdw4Ghpk.js",
+          "sha256": "7fed215baef239c6a508afae205c49a2b372775d1657a4b8d81ba0fc4d5376fc",
+          "patches": [],
+          "patched_sha256": "7fed215baef239c6a508afae205c49a2b372775d1657a4b8d81ba0fc4d5376fc"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/rolldown-runtime-B0Z9INg1.js",
+          "out": "plotly-graph-card/rolldown-runtime-B0Z9INg1.js",
+          "sha256": "5e9b0d884d2ebb14e241ab38b43e41efb61bce2e74d71507b0b95b264fba4047",
+          "patches": [],
+          "patched_sha256": "5e9b0d884d2ebb14e241ab38b43e41efb61bce2e74d71507b0b95b264fba4047"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ru-CSWdBoPh.js",
+          "out": "plotly-graph-card/ru-CSWdBoPh.js",
+          "sha256": "206941fdc85a4a886271cf6138fef03ee98764b1b3553c9614513ff33ad651e8",
+          "patches": [],
+          "patched_sha256": "206941fdc85a4a886271cf6138fef03ee98764b1b3553c9614513ff33ad651e8"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/select-BZNrWWlf.js",
+          "out": "plotly-graph-card/select-BZNrWWlf.js",
+          "sha256": "1b68128b548aa770691b21a2967effb45bd2c2bd55a4c1ba7e14c8a349b080fa",
+          "patches": [],
+          "patched_sha256": "1b68128b548aa770691b21a2967effb45bd2c2bd55a4c1ba7e14c8a349b080fa"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/show_no_webgl_msg-BzwGLmPP.js",
+          "out": "plotly-graph-card/show_no_webgl_msg-BzwGLmPP.js",
+          "sha256": "f231453a516455f6a0edfccf2dbe02032981c8d5db3cb2e43ffddb3d2b3e99cf",
+          "patches": [],
+          "patched_sha256": "f231453a516455f6a0edfccf2dbe02032981c8d5db3cb2e43ffddb3d2b3e99cf"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/si-C-2yUB6x.js",
+          "out": "plotly-graph-card/si-C-2yUB6x.js",
+          "sha256": "2cb8914fc4b4c7d464f495de43bb009ffceadab52a28e2d870fed111c2f999b2",
+          "patches": [],
+          "patched_sha256": "2cb8914fc4b4c7d464f495de43bb009ffceadab52a28e2d870fed111c2f999b2"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sk-CRp2-mKc.js",
+          "out": "plotly-graph-card/sk-CRp2-mKc.js",
+          "sha256": "37c06d69e051b106c65b1648255786368b25e6d72a5d2627f3248cfe250c75f6",
+          "patches": [],
+          "patched_sha256": "37c06d69e051b106c65b1648255786368b25e6d72a5d2627f3248cfe250c75f6"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sl-Y93GNAwC.js",
+          "out": "plotly-graph-card/sl-Y93GNAwC.js",
+          "sha256": "351e4e28011aae5098c18a290ec6df86f70d0f2bb9224eb3048521cc81611d42",
+          "patches": [],
+          "patched_sha256": "351e4e28011aae5098c18a290ec6df86f70d0f2bb9224eb3048521cc81611d42"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sq-OP8DlO68.js",
+          "out": "plotly-graph-card/sq-OP8DlO68.js",
+          "sha256": "4a76b8ea04ef1d0f6430be536a349ccfa40a264848ca268308d9e29a6c22f7da",
+          "patches": [],
+          "patched_sha256": "4a76b8ea04ef1d0f6430be536a349ccfa40a264848ca268308d9e29a6c22f7da"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sr-DHBsN75e.js",
+          "out": "plotly-graph-card/sr-DHBsN75e.js",
+          "sha256": "3a173967fa3a77ccdeed140c607c975c945ee1a6f3bcf22acd88c88fd8d1b4ab",
+          "patches": [],
+          "patched_sha256": "3a173967fa3a77ccdeed140c607c975c945ee1a6f3bcf22acd88c88fd8d1b4ab"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sr-sr-CQCx3rcZ.js",
+          "out": "plotly-graph-card/sr-sr-CQCx3rcZ.js",
+          "sha256": "613ef4e6f106ea20690ed52d5304d72867f8780676597d0ecc680b8572e43a09",
+          "patches": [],
+          "patched_sha256": "613ef4e6f106ea20690ed52d5304d72867f8780676597d0ecc680b8572e43a09"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/src-BjUPOL97.js",
+          "out": "plotly-graph-card/src-BjUPOL97.js",
+          "sha256": "07c68504ed67bba6638a1bf3c7d945902a8ca13813ece130093ccd478e86d244",
+          "patches": [],
+          "patched_sha256": "07c68504ed67bba6638a1bf3c7d945902a8ca13813ece130093ccd478e86d244"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/src-Bx9lnAEx.js",
+          "out": "plotly-graph-card/src-Bx9lnAEx.js",
+          "sha256": "ee14d57a371b7124fb7534c98d8556fdc8ee3bfcbbc6aa33503040c9357ba4f4",
+          "patches": [],
+          "patched_sha256": "ee14d57a371b7124fb7534c98d8556fdc8ee3bfcbbc6aa33503040c9357ba4f4"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/subplot_defaults-Dzs5RNQ_.js",
+          "out": "plotly-graph-card/subplot_defaults-Dzs5RNQ_.js",
+          "sha256": "a1468a4774fe62b9bd85b309a3061f1d8724a64825d606ad0116939fcd837770",
+          "patches": [],
+          "patched_sha256": "a1468a4774fe62b9bd85b309a3061f1d8724a64825d606ad0116939fcd837770"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/supports_pixelated_image-Dl4-QDJs.js",
+          "out": "plotly-graph-card/supports_pixelated_image-Dl4-QDJs.js",
+          "sha256": "88d5586e54a4f5e1834fe892a8a69b9aa1e1bc5341e14fe3a54829fecda0218d",
+          "patches": [],
+          "patched_sha256": "88d5586e54a4f5e1834fe892a8a69b9aa1e1bc5341e14fe3a54829fecda0218d"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sv-BFslHSUm.js",
+          "out": "plotly-graph-card/sv-BFslHSUm.js",
+          "sha256": "79c05a0156a318a868c883d76a107a1213addbc0803bc966a2d9382b3bde1cd4",
+          "patches": [],
+          "patched_sha256": "79c05a0156a318a868c883d76a107a1213addbc0803bc966a2d9382b3bde1cd4"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/sw-BoeGwjyU.js",
+          "out": "plotly-graph-card/sw-BoeGwjyU.js",
+          "sha256": "a394c77a099ed0f1349f26f370c33231d0648b0f88b4b058e7343c97f8623f86",
+          "patches": [],
+          "patched_sha256": "a394c77a099ed0f1349f26f370c33231d0648b0f88b4b058e7343c97f8623f86"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ta-BOTRuq-G.js",
+          "out": "plotly-graph-card/ta-BOTRuq-G.js",
+          "sha256": "79d2a599c13310091794dcadf8ecf0782b92aae472413fbb064f436de16ce0d7",
+          "patches": [],
+          "patched_sha256": "79d2a599c13310091794dcadf8ecf0782b92aae472413fbb064f436de16ce0d7"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/th-DroKo6G7.js",
+          "out": "plotly-graph-card/th-DroKo6G7.js",
+          "sha256": "41fe9267bbc50fbfd128f23836875c6e3e5760d657279ba51c68b16ce513f054",
+          "patches": [],
+          "patched_sha256": "41fe9267bbc50fbfd128f23836875c6e3e5760d657279ba51c68b16ce513f054"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/tr-BJeTk8DM.js",
+          "out": "plotly-graph-card/tr-BJeTk8DM.js",
+          "sha256": "2d948eae27a6a95ce9b04ff97443e2bfb3c5777183a1d33ca35dd49c298278f9",
+          "patches": [],
+          "patched_sha256": "2d948eae27a6a95ce9b04ff97443e2bfb3c5777183a1d33ca35dd49c298278f9"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/tt-D-3ozugw.js",
+          "out": "plotly-graph-card/tt-D-3ozugw.js",
+          "sha256": "d03fbe3f29eb067ec99f448ab2332308c0e6e84dc68652d33a83080fa6cfc601",
+          "patches": [],
+          "patched_sha256": "d03fbe3f29eb067ec99f448ab2332308c0e6e84dc68652d33a83080fa6cfc601"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/uk-CQwfZrXs.js",
+          "out": "plotly-graph-card/uk-CQwfZrXs.js",
+          "sha256": "754463042c7c86a60ff615e9b4d60147038e2f9b4e55dfb58c36e3cd9f757343",
+          "patches": [],
+          "patched_sha256": "754463042c7c86a60ff615e9b4d60147038e2f9b4e55dfb58c36e3cd9f757343"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/ur-C2mzDGXf.js",
+          "out": "plotly-graph-card/ur-C2mzDGXf.js",
+          "sha256": "413b5d28118ef090648175907ae149c3ef6438aa75bac362ad7f214a2ddbb625",
+          "patches": [],
+          "patched_sha256": "413b5d28118ef090648175907ae149c3ef6438aa75bac362ad7f214a2ddbb625"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/vi-D63-8y8a.js",
+          "out": "plotly-graph-card/vi-D63-8y8a.js",
+          "sha256": "fc4b8f9dda22370b3f01370413f1307bf472eb446d7e63765073fb2946a4c557",
+          "patches": [],
+          "patched_sha256": "fc4b8f9dda22370b3f01370413f1307bf472eb446d7e63765073fb2946a4c557"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/zh-cn-BPHNzzA7.js",
+          "out": "plotly-graph-card/zh-cn-BPHNzzA7.js",
+          "sha256": "175145c4d695c4ab68196a420b373e79aa499c6b38b9f6cef1829a8fe277baeb",
+          "patches": [],
+          "patched_sha256": "175145c4d695c4ab68196a420b373e79aa499c6b38b9f6cef1829a8fe277baeb"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/zh-hk-jjp3uMHq.js",
+          "out": "plotly-graph-card/zh-hk-jjp3uMHq.js",
+          "sha256": "da7bfe973d33a6ae9983d24427a129292ac2ab54549ea8325b0d7f332056a2df",
+          "patches": [],
+          "patched_sha256": "da7bfe973d33a6ae9983d24427a129292ac2ab54549ea8325b0d7f332056a2df"
+        },
+        {
+          "src": "https://github.com/dbuezas/lovelace-plotly-graph-card/releases/download/v4.0.2/zh-tw-dOByxpdD.js",
+          "out": "plotly-graph-card/zh-tw-dOByxpdD.js",
+          "sha256": "589dbc26855e30eec79626b0b0c0be574784ea83a4141c14c805aca4dbb49908",
+          "patches": [],
+          "patched_sha256": "589dbc26855e30eec79626b0b0c0be574784ea83a4141c14c805aca4dbb49908"
         }
       ]
     }
