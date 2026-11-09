@@ -24,6 +24,7 @@ JavaScript inside Home Assistant with the logged-in user's full rights.
 | custom-card-features | 4.11.2 | `eval` action removed (`eval(action.eval)` ran arbitrary JavaScript from card config) |
 | streamline-card | v0.2.2 | template `fetch` restricted to the Home Assistant origin |
 | material-you-utilities | 2.1.26 | background-image `fetch` restricted to the Home Assistant origin |
+| apexcharts-card | v2.2.3 | `transform` option removed (`new Function` ran JavaScript from card config); `EVAL:` option strings no longer evaluated (indirect `eval`); no network calls in the bundle |
 | Frosted Glass Theme Manager | v1.4 | default backgrounds served from `/local/vendor/frosted-glass/` instead of jsDelivr; backgrounds pinned to a commit, not `main` |
 | button-card v7.0.1, card-mod v4.2.1, mushroom v5.2.3, navbar-card v1.7.1, simple-swipe-card v3.1.0, simple-tabs v1.5.0, paper-buttons-row v2.3.1, expander-card 0.1.5, vertical-stack-in-card v1.1.4 | pinned | none needed |
 

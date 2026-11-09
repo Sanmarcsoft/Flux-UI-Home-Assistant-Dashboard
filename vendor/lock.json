@@ -64,6 +64,24 @@
       "find": "https://cdn.jsdelivr.net/gh/wessamlauf/homeassistant-frosted-glass-themes@refs/heads/main/themes/",
       "replace": "/local/vendor/frosted-glass/",
       "count": 2
+    },
+    "apex-no-transform-js": {
+      "id": "apex-no-transform-js",
+      "find": "_applyTransform(e,t){return new Function(\"x\",\"hass\",\"entity\",`'use strict'; ${this._config.transform}`).call(this,e,this._hass,t)}",
+      "replace": "_applyTransform(e,t){return e}",
+      "count": 1
+    },
+    "apex-no-eval-options": {
+      "id": "apex-no-eval-options",
+      "find": "&&(e[o]=t(`(${e[o].trim().slice(5)})`))",
+      "replace": "&&(e[o]=void 0)",
+      "count": 1
+    },
+    "apex-no-eval-ref": {
+      "id": "apex-no-eval-ref",
+      "find": "function mc(e){const t=eval;return",
+      "replace": "function mc(e){const t=null;return",
+      "count": 1
     }
   },
   "entries": [
@@ -380,6 +398,25 @@
           "sha256": "eac88b163219e3c278856ee7794ad2c74198c62276bf1b0f675c6a021b8cc53c",
           "patches": [],
           "patched_sha256": "eac88b163219e3c278856ee7794ad2c74198c62276bf1b0f675c6a021b8cc53c"
+        }
+      ]
+    },
+    {
+      "name": "apexcharts-card",
+      "repo": "RomRider/apexcharts-card",
+      "ref": "v2.2.3",
+      "license": "MIT",
+      "files": [
+        {
+          "src": "https://github.com/RomRider/apexcharts-card/releases/download/v2.2.3/apexcharts-card.js",
+          "out": "apexcharts-card/apexcharts-card.js",
+          "sha256": "346780707773fb90c45e9eeaf8acb010d16a8089e86563a242cc4e1d8995f718",
+          "patches": [
+            "apex-no-transform-js",
+            "apex-no-eval-options",
+            "apex-no-eval-ref"
+          ],
+          "patched_sha256": "4546b15ef2d83fc504ece025187fdbd120cfdf11e729a8c12b7835df53a9a0b1"
         }
       ]
     }
